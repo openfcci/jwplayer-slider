@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JWPlayer Slider</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="article-slider.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
+        <script type="application/javascript" src="https://content.jwplatform.com/libraries/R6N0vQlD.js"></script>
+        <script type="application/javascript" src="article-slider.js"></script>
+    </head>
+    <body>
+        <div class='node-image-wrapper large article-slider'>
+            <button class='next'>
+                <img src='arrow-next.png' alt='next'/>
+            </button>
+            <button class='prev'>
+                <img src='arrow-back.png' alt='prev'/>
+            </button>
+            <div class='individual-slide individual-slide-1' style='position: relative;'>
+                <span id="jwplayer-video-0">
+                    <script type="text/javascript">
+                        var playerInstance = jwplayer("jwplayer-video-0");
+                        playerInstance.setup({
+                            playlist: "//content.jwplatform.com/feeds/b5pfSP8L.json",
+                            mediaid: "b5pfSP8L",
+                            width: "100%",
+                            //height:"100%",
+                            //hlshtml: true,
+                            //androidhls: true,
+                            //common aspect ratio: 16:9, 24:10 or 4:3
+                            aspectratio: "16:9",
+                            autostart: true,
+                            ga: {},
+                            advertising: {
+                                client: "googima",
+                                schedule: {
+                                    "adbreak1": {
+                                        "offset": "pre",
+                                        "tag": "http://pubads.g.doubleclick.net/gampad/ads?iu=/7021/fcc.forum/wday&sz=640x480&cust_params=kw%3DL-L-M+Loboes%2CWDAY+Fall+Camp+Tour%2CHigh+school+football%2Csports%2Cfootball&ad_rule=0&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=%5BREFERRER_URL%5D&correlator=%5BTIMESTAMP%5D"
+                                    },
+                                    "adbreak2": {
+                                        "offset": "post",
+                                        "tag": "http://pubads.g.doubleclick.net/gampad/ads?iu=/7021/fcc.forum/wday&sz=640x480&cust_params=kw%3DL-L-M+Loboes%2CWDAY+Fall+Camp+Tour%2CHigh+school+football%2Csports%2Cfootball&ad_rule=0&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=%5BREFERRER_URL%5D&correlator=%5BTIMESTAMP%5D"
+                                    }
+                                }
+                            },
+                            'events': {
+                                onPause: function () {
+                                    console.log('pause');
+                                },
+                                onBuffer: function () {
+                                    console.log('buffer');
+                                },
+                                onPlay: function () {
+                                    console.log('play');
+                                },
+                                onIdle: function () {
+                                    console.log('idle');
+                                }
+                            }
+                        });
+                        // Ad Error
+                        playerInstance.on('adError', function (event) {
+                            console.log('JWPlayer: Ad Error');
+                            console.log(event);
+                        });
+                        //Ads
+                        playerInstance.on('adImpression', function (event) {
+                            console.log(event);
+                            //event.setControls(true);
+                            console.log('AD Impression');
+                        });
+                    </script>
+                </span>
+                <span class='slide-number'>1 / 2</span>
+            </div>
+            <div class='individual-slide individual-slide-2' style='position: relative;'>
+                <img class='node-image large' src='https://placekitten.com/g/200/300'/>
+                <span class='image-caption'></span>
+                <span class='slide-number'>2 / 2</span>
+            </div>
+        </div>
+    </body>
+</html>
