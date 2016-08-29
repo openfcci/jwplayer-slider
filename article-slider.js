@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
     cycleItems();
 
     jQuery('.next').click(function () {
-        console.log('test');
+        console.log('next item');
         pauseVideos();
         currentIndex += 1;
         if (currentIndex > itemAmt - 1) {
@@ -33,6 +33,7 @@ jQuery(document).ready(function () {
     });
 
     jQuery('.prev').click(function () {
+        console.log('previous item');
         pauseVideos();
         currentIndex -= 1;
         if (currentIndex < 0) {
