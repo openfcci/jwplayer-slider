@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="article-slider.css">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
         <script type="application/javascript" src="https://content.jwplatform.com/libraries/R6N0vQlD.js"></script>
-        <script type="application/javascript" src="article-slider.js"></script>
+        <script type="application/javascript" src="article-slider.min.js"></script>
     </head>
     <body>
         <div class='node-image-wrapper large article-slider'>
@@ -30,9 +30,8 @@ and open the template in the editor.
                             playlist: "//content.jwplatform.com/feeds/b5pfSP8L.json",
                             mediaid: "b5pfSP8L",
                             width: "100%",
-                            //height:"100%",
-                            //hlshtml: true,
-                            //androidhls: true,
+                            hlshtml: true,
+                            androidhls: true,
                             //common aspect ratio: 16:9, 24:10 or 4:3
                             aspectratio: "16:9",
                             autostart: true,
@@ -48,20 +47,6 @@ and open the template in the editor.
                                         "offset": "post",
                                         "tag": "http://pubads.g.doubleclick.net/gampad/ads?iu=/7021/fcc.forum/wday&sz=640x480&cust_params=kw%3DL-L-M+Loboes%2CWDAY+Fall+Camp+Tour%2CHigh+school+football%2Csports%2Cfootball&ad_rule=0&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=%5BREFERRER_URL%5D&correlator=%5BTIMESTAMP%5D"
                                     }
-                                }
-                            },
-                            'events': {
-                                onPause: function () {
-                                    console.log('pause');
-                                },
-                                onBuffer: function () {
-                                    console.log('buffer');
-                                },
-                                onPlay: function () {
-                                    console.log('play');
-                                },
-                                onIdle: function () {
-                                    console.log('idle');
                                 }
                             }
                         });
