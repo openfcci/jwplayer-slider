@@ -15,7 +15,6 @@ jQuery(document).ready(function() {
             var is_video = isVideo(index);
             if (is_video) {
                 i.css('width', '0');
-                i.css('height', '0');
             } else {
                 i.hide();
             }
@@ -23,7 +22,7 @@ jQuery(document).ready(function() {
     }
 
     function isVideo(index) {
-        if ($('#jwplayer-video-' + index).length) {
+        if (jQuery('#jwplayer-video-' + index).length) {
             return true;
         }
         return false;
@@ -31,7 +30,7 @@ jQuery(document).ready(function() {
 
     function pauseVideos() {
         try {
-            if ($('#jwplayer-video-' + currentIndex).length) {
+            if (jQuery('#jwplayer-video-' + currentIndex).length) {
                 var state = jwplayer('jwplayer-video-' + currentIndex).getState();
                 if (state === 'playing') {
                     jwplayer('jwplayer-video-' + currentIndex).pause();
